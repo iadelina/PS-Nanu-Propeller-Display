@@ -1,2 +1,5 @@
+v1.1:
+Timer delivery
+
 v1.0:
 Repo initalization
