@@ -1,3 +1,6 @@
+v1.2:
+Working with include files for Timer side
+
 v1.1:
 Timer delivery
 
