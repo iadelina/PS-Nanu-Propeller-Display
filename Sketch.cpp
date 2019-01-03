@@ -10,8 +10,8 @@
 //End of Auto generated function prototypes by Atmel Studio
 
 int main(void){
-	 //Timer();
-	 Serial_fct();
+	 Timer();
+	 //Serial_fct();
 	 while(1){
 		
 	 }
