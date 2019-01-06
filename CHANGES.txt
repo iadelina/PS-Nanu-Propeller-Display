@@ -1,3 +1,6 @@
+v1.5:
+External interrupt configuration
+
 v1.4:
 Serial communication implementation
 
