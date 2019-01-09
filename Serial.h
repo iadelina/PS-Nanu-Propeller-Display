@@ -32,36 +32,37 @@ void USART_transmit(unsigned char data){
 	UDR0 = data;
 }
 
-unsigned char USART_receive(){
+unsigned int USART_receive(){
 	while(!(UCSR0A & _BV(UDRE0)))
 	;
 	return UDR0;
 }
 
-void USART_putstring(char *str){
-	while(*str != 0x00){
-		USART_transmit(*str);
-		str++;
-	}
-}
+//void USART_putstring(char *str){
+//	while(*str != 0x00){
+//		USART_transmit(*str);
+//		str++;
+//	}
+//}
 
+int leds_shift[7] = {3, 4, 5, 6, 7, 0, 1};
 ISR(USART_RX_vect){
 	//PORTD ^= 0xFC;
 	//PORTB ^= 0x1F;
 
-	//unsigned char recievedChar = USART_receive();
-	 //if (recievedChar == 'H') {
-		 PORTD |= _BV(128);
-		 USART_putstring("LED ENABLED\n");
-	// }
-	 //else if (recievedChar == 'L'){	
-	//	PORTB ^= _BV(128);
-	//	USART_putstring("LED DISABLED\n");			
-	//}
+	unsigned int recievedInt = USART_receive();
+	int i = 0;
+	for (i = 0; i < recievedInt; i++){
+		if (leds_shift[i] == 0 || leds_shift[i] == 1)
+		PORTB |= _BV(leds_shift[i]);
+		else
+		PORTD |= _BV(leds_shift[i]);
+	}
 }
 
 void Serial_fct(void){
-	DDRD = _BV(128); // 0x80;
+	DDRD |= _BV(3) | _BV(4) | _BV(5) | _BV(6) | _BV(7);
+	DDRB |= _BV(0) | _BV(1);
 	USART_Init();
 }
 

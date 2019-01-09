@@ -26,7 +26,7 @@ ISR(INT0_vect){
 }
 
 void External(void){
-
+	DDRD |= _BV(2);
 	
 	External_interrupt_Setup();
 }
