@@ -1,3 +1,15 @@
+v1.5:
+Final delivery
+
+v1.5:
+External interrupt configuration
+
+v1.4:
+Serial communication implementation
+
+v1.3:
+Define _BV() function for bit operations
+
 v1.2:
 Working with include files for Timer side
 
