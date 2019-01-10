@@ -1,4 +1,7 @@
 v1.5:
+Final delivery
+
+v1.5:
 External interrupt configuration
 
 v1.4:

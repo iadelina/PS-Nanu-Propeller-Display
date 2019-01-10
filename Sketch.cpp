@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include "Timer.h"
 #include "Serial.h"
+#include "External.h"
 
 /*End of auto generated code by Atmel studio */
 
@@ -12,6 +13,7 @@
 int main(void){
 	 Timer();
 	 //Serial_fct();
+	 External();
 	 while(1){
 		
 	 }

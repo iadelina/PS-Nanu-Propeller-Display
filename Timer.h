@@ -26,17 +26,13 @@ void TimerSetup(){
 }
 
 ISR(TIMER1_COMPA_vect){
-	//PORTD ^= 0xFC;
-	//PORTB ^= 0x1F;
-
+	
 	PORTD ^= _BV(3) ^ _BV(4) ^ _BV(5) ^ _BV(6) ^ _BV(7);
 	PORTB ^= _BV(0) ^ _BV(1);
 }
 
 void Timer(){
-	//DDRD=0xFC;//B11111100;	             
-	//DDRB=0x1F;//B11111;     
-	
+	  	
 	DDRD |= _BV(3) | _BV(4) | _BV(5) | _BV(6) | _BV(7);
 	DDRB |= _BV(0) | _BV(1);
 	
