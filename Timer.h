@@ -12,20 +12,18 @@
 #include <avr/io.h>
 #define _BV(n) (1<<n)
 
-ISR(TIMER1_COMPA_vect);
+ISR(TIMER0_COMPA_vect);
 
 void TimerSetup(){
-	cli();
-	TCCR1A = 0;
-	TCCR1B = 0;
-	TCCR1B |= _BV(CS12) | _BV(CS10);
-	TCCR1B |= _BV(WGM12);
-	TIMSK1 |= _BV(OCIE1A);
-	OCR1A = 14999;
+	TCCR0A |= _BV(WGM01);
+	//OCR0A = 0xFF;
+	TCCR0B |= _BV(CS02) | _BV(CS00);
+	TIMSK0 |= _BV(OCIE0A);
+
 	sei();
 }
 
-ISR(TIMER1_COMPA_vect){
+ISR(TIMER0_COMPA_vect){
 	
 	PORTD ^= _BV(3) ^ _BV(4) ^ _BV(5) ^ _BV(6) ^ _BV(7);
 	PORTB ^= _BV(0) ^ _BV(1);
