@@ -13,13 +13,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#include <avr/io.h>
-#include <avr/interrupt.h>
-
-float time_for_one_rot = 0;
-float time_for_one_degree = 0;
-byte last_IN_st;
-unsigned long counter_for_high_state, current_count;
 volatile uint16_t sequence = 1;
 volatile uint8_t sequence_index = 0;
 
@@ -42,7 +35,5 @@ void External(void){
 
 	External_interrupt_Setup();
 }
-
-
 
 #endif /* EXTERNAL_H_ */

@@ -32,8 +32,4 @@ void Timer1(){
 	Timer1Setup();
 }
 
-
-
-
-
 #endif /* TIMER1_H_ */

@@ -74,19 +74,19 @@ ISR(TIMER0_COMPA_vect){
 		break;
 		//digit 2
 		case 13:
-		display_column(0, 1, 1, 0, 0, 0, 1);
+		display_column(0, 1, 0, 0, 0, 1, 1);
 		break;
 		case 14:
-		display_column(1, 0, 0, 1, 0, 0, 1);
+		display_column(1, 0, 0, 0, 1, 0, 1);
 		break;
 		case 15:
 		display_column(1, 0, 0, 0, 1, 0, 1);
 		break;
 		case 16:
-		display_column(1, 0, 0, 0, 1, 0, 1);
+		display_column(1, 0, 0, 1, 0, 0, 1);
 		break;
 		case 17:
-		display_column(0, 1, 0, 0, 0, 1, 1);
+		display_column(0, 1, 1, 0, 0, 0, 1);
 		break;
 		// 2 empty sequences
 		case 18:
@@ -120,19 +120,19 @@ ISR(TIMER0_COMPA_vect){
 		break;
 		// digit 1
 		case 27:
-		display_column(0, 0, 0, 0, 0, 0, 1);
+		display_column(0, 0, 1, 0, 0, 0, 1);
 		break;
 		case 28:
-		display_column(0, 0, 0, 0, 0, 0, 1);
+		display_column(0, 1, 0, 0, 0, 0, 1);
 		break;
 		case 29:
 		display_column(1, 1, 1, 1, 1, 1, 1);
 		break;
 		case 30:
-		display_column(0, 1, 0, 0, 0, 0, 1);
+		display_column(0, 0, 0, 0, 0, 0, 1);
 		break;
 		case 31:
-		display_column(0, 0, 1, 0, 0, 0, 1);
+		display_column(0, 0, 0, 0, 0, 0, 1);
 		break;
 		// 2 empty sequences
 		case 32:
@@ -143,7 +143,7 @@ ISR(TIMER0_COMPA_vect){
 		break;
 		// digit 9
 		case 34:
-		display_column(0, 1, 1, 1, 1, 1, 0);
+		display_column(0, 1, 1, 0, 0, 0, 1);
 		break;
 		case 35:
 		display_column(1, 0, 0, 1, 0, 0, 1);
@@ -155,13 +155,11 @@ ISR(TIMER0_COMPA_vect){
 		display_column(1, 0, 0, 1, 0, 0, 1);
 		break;
 		case 38:
-		display_column(0, 1, 1, 0, 0, 0, 1);
+		display_column(0, 1, 1, 1, 1, 1, 0);
 		break;
 	}
-
 	sequence_index++;
 	sequence_index = sequence_index % 72;
-
 }
 
 void display_column(int led_1, int led_2, int led_3, int led_4, int led_5, int led_6, int led_7){
