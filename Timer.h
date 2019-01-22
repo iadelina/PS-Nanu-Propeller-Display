@@ -25,10 +25,7 @@ void TimerSetup(){
 }
 
 ISR(TIMER0_COMPA_vect){
-	// the index part and shit
-	//PORTD ^= _BV(3) ^ _BV(4) ^ _BV(5) ^ _BV(6) ^ _BV(7);
-	//PORTB ^= _BV(0) ^ _BV(1);
-	
+		
 	switch(sequence_index){
 		//P
 		case 0:
@@ -214,11 +211,12 @@ void display_column(int led_1, int led_2, int led_3, int led_4, int led_5, int l
 }
 
 void Timer(){
-	External();
+	
 	DDRD |= _BV(3) | _BV(4) | _BV(5) | _BV(6) | _BV(7);
 	DDRB |= _BV(0) | _BV(1);
 	
 	TimerSetup();
+	External();
 }
 
 
