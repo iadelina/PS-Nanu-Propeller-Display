@@ -1,3 +1,9 @@
+v2.0:
+Final final delivery
+
+v1.6:
+Timer0 for saving a sequence duration and Timer1 for saving the duration of one rotation
+
 v1.5:
 Final delivery
 
